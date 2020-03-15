@@ -23,6 +23,8 @@
 <!--	<mvc:resources location="/js/" mapping="/js/**" />-->
 <!--	<mvc:resources location="/upload/" mapping="/upload/**" />-->
 
+	<!-- 对静态资源文件的访问 -->
+	<mvc:default-servlet-handler/>
 	<!-- 开启对SpringMVC注解的支持 -->
 	<mvc:annotation-driven/>
 </beans>

@@ -14,10 +14,10 @@
         http://www.springframework.org/schema/tx/spring-tx-3.2.xsd ">
 
     <!-- 开启注解扫描，管理service和dao -->
-<!--    <context:component-scan base-package="com.it.hospital.service">-->
-<!--    </context:component-scan>-->
-<!--    <context:component-scan base-package="com.it.hospital.dao">-->
-<!--    </context:component-scan>-->
+    <context:component-scan base-package="com.it.service">
+    </context:component-scan>
+    <context:component-scan base-package="com.it.mapper">
+    </context:component-scan>
 
     <!-- 加载db.properties文件中的内容 -->
     <context:property-placeholder location="classpath:jdbc.properties" />
@@ -37,7 +37,7 @@
     <!-- mapper扫描器，用于产生代理对象 -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <!-- 扫描包路径，如果需要扫描多个包，中间使用半角逗号隔开 -->
-        <property name="basePackage" value="com.it.hospital.dao" />
+        <property name="basePackage" value="com.it.mapper" />
     </bean>
 
     <!-- 打开Spring的Annotation支持 -->
@@ -45,11 +45,11 @@
 
     <!-- 配置Spring的声明式事务管理 -->
     <!-- 配置事务管理器 -->
-    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-        <property name="dataSource" ref="dataSource"/>
-    </bean>
+<!--    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">-->
+<!--        <property name="dataSource" ref="dataSource"/>-->
+<!--    </bean>-->
 
-    <tx:annotation-driven transaction-manager="transactionManager"/>
+<!--    <tx:annotation-driven transaction-manager="transactionManager"/>-->
 
 
 
